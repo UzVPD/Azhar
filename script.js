@@ -35,9 +35,24 @@ startTestButton.addEventListener("click", function () {
                 const answerIndex = parseInt(this.getAttribute("data-index"));
 
                 // Пример подсчёта баллов (зависит от логики)
-                if (index === 0 && answerIndex === 0) score++; // Вопрос 1: "Врач"
-                if (index === 1 && answerIndex === 3) score--; // Вопрос 2: "Технологии"
-                if (index === 2 && answerIndex === 2) score++; // Вопрос 3: "Работа с людьми"
+                if (index === 0) {
+                    if (answerIndex === 0) score += 2; // Врач
+                    if (answerIndex === 1) score += 3; // Инженер
+                    if (answerIndex === 2) score += 1; // Архитектор
+                    if (answerIndex === 3) score += 4; // Программист
+                }
+                if (index === 1) {
+                    if (answerIndex === 0) score += 3; // Математика
+                    if (answerIndex === 1) score += 2; // Творчество
+                    if (answerIndex === 2) score += 1; // Социальные науки
+                    if (answerIndex === 3) score += 4; // Технологии
+                }
+                if (index === 2) {
+                    if (answerIndex === 0) score += 1; // Командная работа
+                    if (answerIndex === 1) score += 2; // Самостоятельная работа
+                    if (answerIndex === 2) score += 3; // Работа с людьми
+                    if (answerIndex === 3) score += 4; // Работа с данными
+                }
 
                 // Переход к следующему вопросу или завершение
                 currentQuestionIndex++;
@@ -58,11 +73,11 @@ startTestButton.addEventListener("click", function () {
         questionsContainer.style.display = "none";
         let resultMessage;
     
-        if (score === 3) {
+        if (score >= 9) {
             resultMessage = "Технические профессии (например, инженер, программист, ученый).";
-        } else if (score === 2) {
+        } else if (score >= 6) {
             resultMessage = "Творческие профессии (например, дизайнер, художник, писатель).";
-        } else if (score === 1) {
+        } else if (score >= 3) {
             resultMessage = "Социальные профессии (например, учитель, врач, психолог).";
         } else {
             resultMessage = "Общие профессии (например, менеджер, администратор, продавец).";
