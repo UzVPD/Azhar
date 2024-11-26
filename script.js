@@ -1,5 +1,5 @@
-// Профориентационный тест
 const startTestButton = document.getElementById("startTest");
+const questionContainer = document.getElementById("questionContainer");
 const testResultDiv = document.getElementById("testResult");
 
 startTestButton.addEventListener("click", function() {
@@ -9,15 +9,32 @@ startTestButton.addEventListener("click", function() {
         { question: "Какую среду работы вы предпочитаете?", answers: ["Командная работа", "Самостоятельная работа", "Работа с людьми", "Работа с данными"] }
     ];
 
+    let currentQuestionIndex = 0;
     let score = 0;
-    let answers = [];
 
-    questions.forEach((q, index) => {
-        let answer = prompt(`${q.question}\n1) ${q.answers[0]}\n2) ${q.answers[1]}\n3) ${q.answers[2]}\n4) ${q.answers[3]}`);
-        answers.push(answer);
-    });
+    function showQuestion(index) {
+        const question = questions[index];
+        questionContainer.innerHTML = `
+            <p>${question.question}</p>
+            <button class="answerBtn">${question.answers[0]}</button>
+            <button class="answerBtn">${question.answers[1]}</button>
+            <button class="answerBtn">${question.answers[2]}</button>
+            <button class="answerBtn">${question.answers[3]}</button>
+        `;
 
-    if (answers.includes("1")) score += 1; // например, Врач
-    if (answers.includes("2")) score += 1; // например, Инженер
+        const answerButtons = document.querySelectorAll(".answerBtn");
+        answerButtons.forEach((button, i) => {
+            button.addEventListener("click", () => {
+                if (i === 0) score++; // Пример подсчёта баллов, при выборе первого ответа
+                currentQuestionIndex++;
+                if (currentQuestionIndex < questions.length) {
+                    showQuestion(currentQuestionIndex);
+                } else {
+                    testResultDiv.innerHTML = `Ваши рекомендации: ${score >= 2 ? "Технические профессии" : "Творческие профессии"}`;
+                }
+            });
+        });
+    }
 
-    testResultDiv.innerHTML = `<p>Ваши рекомендации: ${score >= 2 ? "Технические профессии" : "Творческие профессии"}</p
+    showQuestion(currentQuestionIndex);
+});
