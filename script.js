@@ -36,7 +36,7 @@ startTestButton.addEventListener("click", function () {
 
                 // Пример подсчёта баллов (зависит от логики)
                 if (index === 0 && answerIndex === 0) score++; // Вопрос 1: "Врач"
-                if (index === 1 && answerIndex === 3) score++; // Вопрос 2: "Технологии"
+                if (index === 1 && answerIndex === 3) score--; // Вопрос 2: "Технологии"
                 if (index === 2 && answerIndex === 2) score++; // Вопрос 3: "Работа с людьми"
 
                 // Переход к следующему вопросу или завершение
