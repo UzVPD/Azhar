@@ -56,8 +56,18 @@ startTestButton.addEventListener("click", function () {
     // Функция завершения теста
     function finishTest() {
         questionsContainer.style.display = "none";
-        testResultDiv.innerHTML = `<p>Ваши рекомендации: ${
-            score >= 2 ? "Технические профессии" : "Творческие профессии"
-        }</p>`;
-    }
+        let resultMessage;
+    
+        if (score === 3) {
+            resultMessage = "Технические профессии (например, инженер, программист, ученый).";
+        } else if (score === 2) {
+            resultMessage = "Творческие профессии (например, дизайнер, художник, писатель).";
+        } else if (score === 1) {
+            resultMessage = "Социальные профессии (например, учитель, врач, психолог).";
+        } else {
+            resultMessage = "Общие профессии (например, менеджер, администратор, продавец).";
+        }
+    
+        testResultDiv.innerHTML = `<p>Ваши рекомендации: ${resultMessage}</p>`;
+}
 })
