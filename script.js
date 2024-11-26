@@ -36,22 +36,22 @@ startTestButton.addEventListener("click", function () {
 
                 // Пример подсчёта баллов (зависит от логики)
                 if (index === 0) {
-                    if (answerIndex === 0) score += 2; // Врач
-                    if (answerIndex === 1) score += 3; // Инженер
-                    if (answerIndex === 2) score += 1; // Архитектор
+                    if (answerIndex === 0) score += 1; // Врач
+                    if (answerIndex === 1) score += 2; // Инженер
+                    if (answerIndex === 2) score += 3; // Архитектор
                     if (answerIndex === 3) score += 4; // Программист
                 }
                 if (index === 1) {
-                    if (answerIndex === 0) score += 3; // Математика
-                    if (answerIndex === 1) score += 2; // Творчество
-                    if (answerIndex === 2) score += 1; // Социальные науки
-                    if (answerIndex === 3) score += 4; // Технологии
+                    if (answerIndex === 0) score += 4; // Математика
+                    if (answerIndex === 1) score += 3; // Творчество
+                    if (answerIndex === 2) score += 2; // Социальные науки
+                    if (answerIndex === 3) score += 1; // Технологии
                 }
                 if (index === 2) {
-                    if (answerIndex === 0) score += 1; // Командная работа
-                    if (answerIndex === 1) score += 2; // Самостоятельная работа
-                    if (answerIndex === 2) score += 3; // Работа с людьми
-                    if (answerIndex === 3) score += 4; // Работа с данными
+                    if (answerIndex === 0) score += 3; // Командная работа
+                    if (answerIndex === 1) score += 4; // Самостоятельная работа
+                    if (answerIndex === 2) score += 1; // Работа с людьми
+                    if (answerIndex === 3) score += 2; // Работа с данными
                 }
 
                 // Переход к следующему вопросу или завершение
@@ -77,7 +77,7 @@ startTestButton.addEventListener("click", function () {
             resultMessage = "Технические профессии (например, инженер, программист, ученый).";
         } else if (score >= 6) {
             resultMessage = "Творческие профессии (например, дизайнер, художник, писатель).";
-        } else if (score >= 3) {
+        } else if (score >= 4) {
             resultMessage = "Социальные профессии (например, учитель, врач, психолог).";
         } else {
             resultMessage = "Общие профессии (например, менеджер, администратор, продавец).";
