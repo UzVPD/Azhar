@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Образование за рубежом</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Образование за рубежом</h1>
+        <p>Достойное образование — обеспеченное будущее. 15 лет на рынке. Лицензия и международная аккредитация.</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#game">Профориентационная игра</a></li>
+            <li><a href="#prep">Подготовка к поступлению</a></li>
+            <li><a href="#calculator">Калькулятор</a></li>
+            <li><a href="#useful-links">Полезные ссылки</a></li>
+            <li><a href="#downloads">Материалы</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Профориентационный тест -->
+        <section id="game">
+            <h2>Профориентационная игра</h2>
+            <p>Пройдите тест, чтобы узнать, какая профессия вам подходит!</p>
+            <button id="startTest">Начать тест</button>
+            <div id="testResult"></div>
+        </section>
+
+        <!-- Подготовка к поступлению -->
+        <section id="prep">
+            <h2>Подготовка к поступлению</h2>
+            <p>Рекомендации по экзаменам, требованиям и визам для родителей и студентов.</p>
+            <ul>
+                <li>США: SAT/ACT, IELTS/TOEFL.</li>
+                <li>Великобритания: A-levels или Foundation, IELTS Academic.</li>
+                <li>Европа: языковые экзамены (например, TestDaF).</li>
+            </ul>
+        </section>
+
+        <!-- Калькулятор -->
+        <section id="calculator">
+            <h2>Проверка требований для поступления</h2>
+            <form id="calculatorForm">
+                <label for="gpa">Ваш средний балл (GPA):</label>
+                <input type="number" id="gpa" step="0.1" min="0" max="4.0" required>
+                <label for="sat">Ваш результат SAT:</label>
+                <input type="number" id="sat" min="400" max="1600" required>
+                <label for="ielts">Ваш результат IELTS:</label>
+                <input type="number" id="ielts" step="0.1" min="0" max="9.0" required>
+                <button type="button" id="checkRequirements">Проверить</button>
+            </form>
+            <div id="calculatorResult"></div>
+        </section>
+
+        <!-- Полезные ссылки -->
+        <section id="useful-links">
+            <h2>Полезные ссылки</h2>
+            <ul>
+                <li><a href="https://www.collegeboard.org/" target="_blank">Официальный сайт SAT</a></li>
+                <li><a href="https://www.ielts.org/" target="_blank">Официальный сайт IELTS</a></li>
+                <li><a href="https://www.commonapp.org/" target="_blank">Common Application</a></li>
+            </ul>
+        </section>
+
+        <!-- Материалы для скачивания -->
+        <section id="downloads">
+            <h2>Материалы для скачивания</h2>
+            <ul>
+                <li><a href="guides/prepare-for-sat.pdf" download>Гайд по подготовке к SAT</a></li>
+                <li><a href="guides/ielts-preparation.pdf" download>Гайд по подготовке к IELTS</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>©️ 2024 Образование за рубежом. Все права защищены.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
